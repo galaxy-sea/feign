@@ -64,6 +64,7 @@
     <module>example-wikipedia-with-springboot</module>
     <module>benchmark</module>
     <module>moshi</module>
+    <module>fastjson2</module>
   </modules>
 
   <properties>
@@ -96,6 +97,7 @@
     <jackson.version>2.17.0</jackson.version>
     <assertj.version>3.25.3</assertj.version>
     <mockito.version>5.11.0</mockito.version>
+    <fastjson2.version>2.0.48</fastjson2.version>
 
     <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
     <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
@@ -410,6 +412,12 @@
         <version>${slf4j.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>com.alibaba.fastjson2</groupId>
+        <artifactId>fastjson2</artifactId>
+        <version>${fastjson2.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -453,69 +461,11 @@
           </configuration>
         </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin.version}</version>
-          <configuration>
-            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-            <trimStackTrace>false</trimStackTrace>
-            <argLine>${jvm.options}</argLine>
-            <jdkToolchain>
-              <version>${latest.java.version}</version>
-            </jdkToolchain>
-          </configuration>
-        </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-failsafe-plugin</artifactId>
-          <version>${maven-surefire-plugin.version}</version>
-          <configuration>
-            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-            <trimStackTrace>false</trimStackTrace>
-            <jdkToolchain>
-              <version>${latest.java.version}</version>
-            </jdkToolchain>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-toolchains-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>toolchain</goal>
-            </goals>
-            <configuration>
-              <toolchains>
-                <jdk>
-                  <version>${main.java.version}</version>
-                </jdk>
-              </toolchains>
-            </configuration>
-          </execution>
-          <execution>
-            <id>test</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>toolchain</goal>
-            </goals>
-            <configuration>
-              <toolchains>
-                <jdk>
-                  <version>${latest.java.version}</version>
-                </jdk>
-              </toolchains>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
 
       <plugin>
         <groupId>org.moditect</groupId>
