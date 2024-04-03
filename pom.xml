@@ -99,7 +99,7 @@
     <mockito.version>5.11.0</mockito.version>
     <fastjson2.version>2.0.48</fastjson2.version>
 
-    <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-install-plugin.version>3.1.1</maven-install-plugin.version>
     <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
     <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
@@ -116,7 +116,7 @@
     <maven-gpg-plugin.version>3.2.1</maven-gpg-plugin.version>
     <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
     <docker-maven-plugin.version>1.2.2</docker-maven-plugin.version>
-    <moditect-maven-plugin.version>1.1.0</moditect-maven-plugin.version>
+    <moditect-maven-plugin.version>1.2.1.Final</moditect-maven-plugin.version>
   </properties>
   <url>https://github.com/openfeign/feign</url>
   <inceptionYear>2012</inceptionYear>
